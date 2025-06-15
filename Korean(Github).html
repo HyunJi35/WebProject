@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WebProject Korean</title>
+    <style>
+        /* 전체 기본 폰트 */
+        body {
+            margin: 0;
+            font-weight: bold;
+        }
+
+        /* 헤더 */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 35px 110px;
+            font-size: 45px;
+            border-bottom: 4px solid black;
+            background-color:rgb(233, 224, 255);
+            font-family: "Arial Black", Gadget, sans-serif;
+        }
+
+        .logo-link {
+            text-decoration: none;
+            color: black;
+            cursor: pointer;
+        }
+
+        .korean-color{
+            color:rgb(98, 0, 255);
+        }
+
+        /* 헤더 내 메뉴 */
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            margin-left: 80px;
+            font-size: 25px;
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* 메인 */
+        main {
+            padding: 70px;
+        }
+
+        korean-padding {
+            padding: 1px;
+        }
+
+        body {
+            justify-content: center;
+        }
+
+        #container {
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        .englishInput {
+            width: 450px;
+            height: 150px;
+            border: 1px solid black;
+            padding: 8px;
+            display: block;
+            overflow-wrap: break-word;
+        }
+
+        .koreanInput {
+            width: 450px;
+            height: 150px;
+            border: 1px solid black;
+            padding: 8px;
+            display: none;
+        }
+
+        #englishKeyboard,
+        #hangulKeyboard {
+            margin-top: 10px;
+        }
+
+        @keyframes cursor {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        .text {
+            display: table-cell;
+            vertical-align: middle;
+            border-right: .05em solid black;
+            animation: cursor 0.5s ease infinite;
+        }
+
+        .function {
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
+            border: 1px solid #000;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        .korea {background-color: rgb(76, 124, 255);}
+        .english {background-color: rgb(241, 104, 104);}
+
+        .group_1 {background-color: rgb(239, 182, 182);}
+        .group_2 {background-color: rgb(252, 219, 156);}
+        .group_3 {background-color: rgb(178, 225, 178);}
+        .group_4 {background-color: rgb(188, 188, 235);}
+
+        /* 푸터 */
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 110px;
+            font-size: 40px;
+            border-top: 4px solid black;
+            font-weight: bold;
+            background-color:rgb(233, 224, 255);
+            font-family: "Arial Black", Gadget, sans-serif;
+        }
+
+        footer .info {
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="WebProject(Github).html" class="logo-link">WebProject</a>
+        <nav>
+            <a href="English(Github).html" class="logo-link">영문 타자기</a>
+            <a href="Korean(Github).html" class="logo-link korean-color">한글 타자기</a>
+            <a href="Calculator(Github).html" class="logo-link">계산기</a>
+            <a href="Telephone(Github).html" class="logo-link">전화기</a>
+        </nav>
+    </header>
+
+    <main>
+        <div id="container">
+            <h3>한양여자대학교 빅데이터과 2402202 이현지</h3>
+            <label class="englishInput" id="englishInput"><span class="text">&nbsp;</span></label>
+            <label class="koreanInput" id="koreanInput"><span class="text">&nbsp;</span></label>
+
+            <div id="englishKeyboard">
+                <div class="row">
+                    <span class="function group_1">1</span><span class="function group_1">2</span><span class="function group_1">3</span>
+                    <span class="function group_1">4</span><span class="function group_1">5</span><span class="function group_1">6</span>
+                    <span class="function group_1">7</span><span class="function group_1">8</span><span class="function group_1">9</span>
+                    <span class="function group_1">0</span>
+                </div>
+                <div class="row">
+                    <span class="function group_2">q</span><span class="function group_2">w</span><span class="function group_2">e</span>
+                    <span class="function group_2">r</span><span class="function group_2">t</span><span class="function group_2">y</span>
+                    <span class="function group_2">u</span><span class="function group_2">i</span><span class="function group_2">o</span>
+                    <span class="function group_2">p</span>
+                </div>
+                <div class="row">
+                    <span class="function group_3">a</span><span class="function group_3">s</span><span class="function group_3">d</span>
+                    <span class="function group_3">f</span><span class="function group_3">g</span><span class="function group_3">h</span>
+                    <span class="function group_3">j</span><span class="function group_3">k</span><span class="function group_3">l</span>
+                    <span class="function group_3">;</span>
+                </div>
+                <div class="row">
+                    <span class="function group_4">z</span><span class="function group_4">x</span><span class="function group_4">c</span>
+                    <span class="function group_4">v</span><span class="function group_4">b</span><span class="function group_4">n</span>
+                    <span class="function group_4">m</span><span class="function group_4">,</span>
+                    <span class="function english" id="toggleBtnEng">한/영</span><span class="function group_4">/</span>
+                </div>
+            </div>
+
+            <korean-padding>
+                <div id="hangulKeyboard" style="display: none;">
+                    <div class="row">
+                        <span class="function group_1">ㅂ</span><span class="function group_1">ㅈ</span><span class="function group_1">ㄷ</span>
+                        <span class="function group_1">ㄱ</span><span class="function group_1">ㅅ</span><span class="function group_1">ㅛ</span>
+                        <span class="function group_1">ㅕ</span><span class="function group_1">ㅑ</span><span class="function group_1">ㅐ</span>
+                        <span class="function group_1">ㅔ</span>
+                    </div>
+                    <div class="row">
+                        <span class="function group_2">ㅁ</span><span class="function group_2">ㄴ</span><span class="function group_2">ㅇ</span>
+                        <span class="function group_2">ㄹ</span><span class="function group_2">ㅎ</span><span class="function group_2">ㅗ</span>
+                        <span class="function group_2">ㅓ</span><span class="function group_2">ㅏ</span><span class="function group_2">ㅣ</span>
+                        <span class="function group_2">;</span>
+                    </div>
+                    <div class="row">
+                        <span class="function group_3">ㅋ</span><span class="function group_3">ㅌ</span><span class="function group_3">ㅊ</span>
+                        <span class="function group_3">ㅍ</span><span class="function group_3">ㅠ</span><span class="function group_3">ㅜ</span>
+                        <span class="function group_3">ㅡ</span><span class="function group_3">,</span>
+                        <span class="function korea" id="toggleBtn">한/영</span><span class="function group_3">/</span>
+                    </div>
+                </div>
+            </korean-padding>
+        </div>
+    </main>
+
+    <footer>
+        <a href="WebProject(Github).html" class="logo-link">WebProject</a>
+        <div class="info">
+            학교: 한양여자대학교&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;학과: 빅데이터과&nbsp;&nbsp;&nbsp;이름: 이현지
+        </div>
+    </footer>
+
+    <script>
+        let isEnglish = true
+        const englishInput = document.getElementById('englishInput')
+        const koreanInput = document.getElementById('koreanInput')
+        const englishKeyboard = document.getElementById('englishKeyboard')
+        const hangulKeyboard = document.getElementById('hangulKeyboard')
+        const toggleBtnEng = document.getElementById('toggleBtnEng')
+        const toggleBtn = document.getElementById('toggleBtn')
+
+        function toggleLanguage() {
+            isEnglish = !isEnglish
+            englishInput.style.display = isEnglish ? 'block' : 'none'
+            koreanInput.style.display = isEnglish ? 'none' : 'block'
+            englishKeyboard.style.display = isEnglish ? 'block' : 'none'
+            hangulKeyboard.style.display = isEnglish ? 'none' : 'block'
+        }
+
+        const keyMap = {
+            KeyQ: { ko: 'ㅂ', en: 'q' }, KeyW: { ko: 'ㅈ', en: 'w' }, KeyE: { ko: 'ㄷ', en: 'e' }, KeyR: { ko: 'ㄱ', en: 'r' },
+            KeyT: { ko: 'ㅅ', en: 't' }, KeyY: { ko: 'ㅛ', en: 'y' }, KeyU: { ko: 'ㅕ', en: 'u' }, KeyI: { ko: 'ㅑ', en: 'i' },
+            KeyO: { ko: 'ㅐ', en: 'o' }, KeyP: { ko: 'ㅔ', en: 'p' }, KeyA: { ko: 'ㅁ', en: 'a' }, KeyS: { ko: 'ㄴ', en: 's' },
+            KeyD: { ko: 'ㅇ', en: 'd' }, KeyF: { ko: 'ㄹ', en: 'f' }, KeyG: { ko: 'ㅎ', en: 'g' }, KeyH: { ko: 'ㅗ', en: 'h' },
+            KeyJ: { ko: 'ㅓ', en: 'j' }, KeyK: { ko: 'ㅏ', en: 'k' }, KeyL: { ko: 'ㅣ', en: 'l' }, KeyZ: { ko: 'ㅋ', en: 'z' },
+            KeyX: { ko: 'ㅌ', en: 'x' }, KeyC: { ko: 'ㅊ', en: 'c' }, KeyV: { ko: 'ㅍ', en: 'v' }, KeyB: { ko: 'ㅠ', en: 'b' },
+            KeyN: { ko: 'ㅜ', en: 'n' }, KeyM: { ko: 'ㅡ', en: 'm' }, Digit1: { en: '1' }, Digit2: { en: '2' },
+            Digit3: { en: '3' }, Digit4: { en: '4' }, Digit5: { en: '5' }, Digit6: { en: '6' },
+            Digit7: { en: '7' }, Digit8: { en: '8' }, Digit9: { en: '9' }, Digit0: { en: '0' },
+            Comma: { ko: ',', en: ',' }, Period: { ko: '.', en: '.' }, Semicolon: { ko: ';', en: ';' }, Slash: { ko: '/', en: '/' }
+        }
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === '.') {
+                e.preventDefault()
+                toggleLanguage()
+                return
+            }
+
+            const map = keyMap[e.code]
+            if (map) {
+                e.preventDefault()
+                if (isEnglish) {
+                    englishInput.textContent += map.en
+                } else {
+                    koreanInput.textContent += map.ko
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

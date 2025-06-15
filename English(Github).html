@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WebProject english</title>
+    <style>
+        /* 전체 기본 폰트 */
+        body {
+            margin: 0;
+            font-weight: bold;
+        }
+
+        /* 헤더 */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 35px 110px;
+            font-size: 45px;
+            border-bottom: 4px solid black;
+            background-color:rgb(233, 224, 255);
+            font-family: "Arial Black", Gadget, sans-serif;
+        }
+
+        .logo-link {
+            text-decoration: none;
+            color: black;
+            cursor: pointer;
+        }
+
+        .english-color{
+            color:rgb(98, 0, 255);
+        }
+
+        /* 헤더 내 메뉴 */
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            margin-left: 80px;
+            font-size: 25px;
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* 메인 */
+        main {
+            text-align: center;
+            padding: 35px;
+        }
+
+        .function {
+            width: 50px;
+            height: 50px;
+            margin: 0;
+            border: 1px solid #000000;
+            font-weight: bold;
+        }
+
+        .paper {
+            display: block;
+            width: 497px;
+            height: 150px;
+            border: 2px solid black;
+            margin: 0 auto 10px;
+        }
+
+        .group_1 {background-color: rgb(252, 170, 170);}
+        .group_2 {background-color: rgb(249, 203, 118);}
+        .group_3 {background-color: rgb(158, 213, 158);}
+        .group_4 {background-color: rgb(171, 171, 236);}
+
+        /* 푸터 */
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 110px;
+            font-size: 40px;
+            border-top: 4px solid black;
+            font-weight: bold;
+            background-color:rgb(233, 224, 255);
+            font-family: "Arial Black", Gadget, sans-serif;
+        }
+
+        footer .info {
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="WebProject(Github).html" class="logo-link">WebProject</a>
+        <nav>
+            <a href="English(Github).html" class="logo-link english-color">영문 타자기</a>
+            <a href="Korean(Github).html" class="logo-link">한글 타자기</a>
+            <a href="Calculator(Github).html" class="logo-link">계산기</a>
+            <a href="Telephone(Github).html" class="logo-link">전화기</a>
+        </nav>
+    </header>
+
+    <main>
+        <p>제작자: 이현지</p>
+        <p>학번: 2402202</p>
+        <p>소속: 한양여자대학교</p>
+
+        <label class="paper" id="paper"></label><br>
+
+        <div>
+            <button class="function group_1">1</button><button class="function group_1">2</button><button class="function group_1">3</button><button class="function group_1">4</button><button class="function group_1">5</button><button class="function group_1">6</button><button class="function group_1">7</button><button class="function group_1">8</button><button class="function group_1">9</button><button class="function group_1">0</button><br>
+            <button class="function group_2">q</button><button class="function group_2">w</button><button class="function group_2">e</button><button class="function group_2">r</button><button class="function group_2">t</button><button class="function group_2">y</button><button class="function group_2">u</button><button class="function group_2">i</button><button class="function group_2">o</button><button class="function group_2">p</button><br>
+            <button class="function group_3">a</button><button class="function group_3">s</button><button class="function group_3">d</button><button class="function group_3">f</button><button class="function group_3">g</button><button class="function group_3">h</button><button class="function group_3">j</button><button class="function group_3">k</button><button class="function group_3">l</button><button class="function group_3">;</button><br>
+            <button class="function group_4">z</button><button class="function group_4">x</button><button class="function group_4">c</button><button class="function group_4">v</button><button class="function group_4">b</button><button class="function group_4">n</button><button class="function group_4">m</button><button class="function group_4">,</button><button class="function group_4">.</button><button class="function group_4">/</button>
+        </div>
+    </main>
+
+    <footer>
+        <a href="WebProject(Github).html" class="logo-link">WebProject</a>
+        <div class="info">
+            학교: 한양여자대학교&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;학과: 빅데이터과&nbsp;&nbsp;&nbsp;이름: 이현지
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("keydown", function (event) {
+            const key = event.key;
+            if ("abcdefghijklmnopqrstuvwxyz0123456789;,. /".includes(key)) {
+                document.getElementById("paper").innerText += key;
+            }
+        });
+    </script>
+</body>
+
+</html>

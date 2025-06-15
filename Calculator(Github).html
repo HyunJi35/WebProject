@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WebProject Calculator</title>
+    <style>
+        /* 전체 기본 폰트 */
+        body {
+            margin: 0;
+            font-weight: bold;
+        }
+
+        /* 헤더 */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 35px 110px;
+            font-size: 45px;
+            border-bottom: 4px solid black;
+            background-color:rgb(233, 224, 255);
+            font-family: "Arial Black", Gadget, sans-serif;
+        }
+
+        .logo-link {
+            text-decoration: none;
+            color: black;
+            cursor: pointer;
+        }
+
+        .calculator-color{
+            color:rgb(98, 0, 255);
+        }
+
+        /* 헤더 내 메뉴 */
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            margin-left: 80px;
+            font-size: 25px;
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* 메인 */
+        main {
+            text-align: center;
+            padding: 37px;
+        }
+
+        .operator {
+            background-color: pink;
+            font-size: 40px;
+        }
+
+        .function {
+            background-color: aliceblue;
+            border-radius: 50%;
+            font-size: 40px;
+        }
+
+        .number {
+            background-color: black;
+            color: white;
+            border-radius: 50%;
+            font-size: 40px;
+        }
+
+        button {
+            width: 90px;
+            height: 90px;
+            font-size: 40px;
+        }
+
+        .custom-input {
+            width: 265px;
+            height: 60px;
+            font-size: 40px;
+        }
+
+        .custom-clear {
+            width: 87px;
+            height: 65px;
+            font-size: 40px;
+        }
+
+        /* 푸터 */
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 110px;
+            font-size: 40px;
+            border-top: 4px solid black;
+            font-weight: bold;
+            background-color:rgb(233, 224, 255);
+            font-family: "Arial Black", Gadget, sans-serif;
+        }
+
+        footer .info {
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="WebProject(Github).html" class="logo-link">WebProject</a>
+        <nav>
+            <a href="English(Github).html" class="logo-link">영문 타자기</a>
+            <a href="Korean(Github).html" class="logo-link">한글 타자기</a>
+            <a href="Calculator(Github).html" class="logo-link calculator-color">계산기</a>
+            <a href="Telephone(Github).html" class="logo-link">전화기</a>
+        </nav>
+    </header>
+
+    <main>
+        <input type="text" class="custom-input" value="0"><button class="custom-clear"><</button><br>
+        <button class="function">C</button><button class="function">±</button><button class="function">%</button><button class="function">=</button><br>
+        <button class="number">7</button><button class="number">8</button><button class="number">9</button><button class="operator">×</button><br>
+        <button class="number">4</button><button class="number">5</button><button class="number">6</button><button class="operator">-</button><br>
+        <button class="number">1</button><button class="number">2</button><button class="number">3</button><button class="operator">+</button><br>
+        <button class="number">0</button><button class="number">.</button><button class="number">00</button><button class="operator">÷</button>
+    </main>
+
+    <footer>
+        <a href="WebProject(Github).html" class="logo-link">WebProject</a>
+        <div class="info">
+            학교: 한양여자대학교&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;학과: 빅데이터과&nbsp;&nbsp;&nbsp;이름: 이현지
+        </div>
+    </footer>
+
+    <script>
+        const input = document.querySelector('.custom-input');
+        const buttons = document.querySelectorAll('button');
+        let formula = '';
+
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].onclick = function () {
+                const val = this.textContent;
+
+                if (val == 'C') {
+                    formula = '';
+                    input.value = '0';
+                } else if (val == '<') {
+                    formula = formula.slice(0, -1);
+                    input.value = formula || '0';
+                } else if (val == '=') {
+                    try {
+                        formula = formula.replace(/×/g, '*').replace(/÷/g, '/');
+                        input.value = eval(formula);
+                        formula = input.value;
+                    } catch {
+                        input.value = 'Error';
+                        formula = '';
+                    }
+                } else if (val == '%') {
+                    formula = (parseFloat(formula) / 100).toString();
+                    input.value = formula;
+                } else if (val == '±') {
+                    if (formula != '') {
+                        if (formula.startsWith('-')) {
+                            formula = formula.slice(1);
+                        } else {
+                            formula = '-' + formula;
+                        }
+                        input.value = formula;
+                    }
+                } else {
+                    formula += val;
+                    input.value = formula;
+                }
+            };
+        }
+    </script>
+</body>
+
+</html>
